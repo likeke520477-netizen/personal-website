@@ -478,6 +478,29 @@
         .apple-item-icon {
             font-size: 48px;
             margin-bottom: 16px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .apple-item-icon img {
+            max-width: 100%;
+            max-height: 80px;
+            object-fit: contain;
+        }
+
+        .apple-item-icon img.error {
+            display: none;
+        }
+
+        .apple-item-icon .emoji-fallback {
+            display: none;
+            font-size: 48px;
+        }
+
+        .apple-item-icon img.error + .emoji-fallback {
+            display: block;
         }
 
         .apple-item-name {
@@ -748,42 +771,42 @@
             <p class="section-subtitle reveal reveal-delay-2" style="margin: 0 auto;">每一件，都是真爱。</p>
             <div class="apple-grid">
                 <div class="apple-item reveal reveal-delay-1">
-                    <div class="apple-item-icon">📱</div>
+                    <div class="apple-item-icon"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-18-pro-finish-select-202609-6-3inch-deserttitanium?wid=400&hei=400&fmt=jpeg&qlt=90" alt="iPhone 18 Pro Max" onerror="this.classList.add('error')"><span class="emoji-fallback">📱</span></div>
                     <div class="apple-item-name">iPhone 18 Pro Max</div>
                     <div class="apple-item-desc">1TB 沙漠色钛金属</div>
                 </div>
                 <div class="apple-item reveal reveal-delay-1">
-                    <div class="apple-item-icon">💻</div>
+                    <div class="apple-item-icon"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp16-spacegray-select-202609?wid=400&hei=400&fmt=jpeg&qlt=90" alt="MacBook Pro M6" onerror="this.classList.add('error')"><span class="emoji-fallback">💻</span></div>
                     <div class="apple-item-name">MacBook Pro M6</div>
                     <div class="apple-item-desc">16 英寸 太空黑</div>
                 </div>
                 <div class="apple-item reveal reveal-delay-2">
-                    <div class="apple-item-icon">⌚</div>
+                    <div class="apple-item-icon"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-ultra-4-select-202609?wid=400&hei=400&fmt=jpeg&qlt=90" alt="Apple Watch Ultra 4" onerror="this.classList.add('error')"><span class="emoji-fallback">⌚</span></div>
                     <div class="apple-item-name">Apple Watch Ultra 4</div>
                     <div class="apple-item-desc">钛金属 + 橙色 Alpine</div>
                 </div>
                 <div class="apple-item reveal reveal-delay-2">
-                    <div class="apple-item-icon">🎧</div>
+                    <div class="apple-item-icon"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/airpods-pro-4-hero-select-202609?wid=400&hei=400&fmt=jpeg&qlt=90" alt="AirPods Pro 4" onerror="this.classList.add('error')"><span class="emoji-fallback">🎧</span></div>
                     <div class="apple-item-name">AirPods Pro 4</div>
                     <div class="apple-item-desc">自适应音频 听力健康</div>
                 </div>
                 <div class="apple-item reveal reveal-delay-3">
-                    <div class="apple-item-icon">📟</div>
+                    <div class="apple-item-icon"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-13-select-202609?wid=400&hei=400&fmt=jpeg&qlt=90" alt="iPad Pro M6" onerror="this.classList.add('error')"><span class="emoji-fallback">📟</span></div>
                     <div class="apple-item-name">iPad Pro M6</div>
                     <div class="apple-item-desc">13 英寸 256GB 纳米纹理</div>
                 </div>
                 <div class="apple-item reveal reveal-delay-3">
-                    <div class="apple-item-icon">🖥️</div>
+                    <div class="apple-item-icon"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/vision-pro-3-hero-select-202609?wid=400&hei=400&fmt=jpeg&qlt=90" alt="Apple Vision Pro 3" onerror="this.classList.add('error')"><span class="emoji-fallback">🖥️</span></div>
                     <div class="apple-item-name">Apple Vision Pro 3</div>
                     <div class="apple-item-desc">256GB 首发购入</div>
                 </div>
                 <div class="apple-item reveal reveal-delay-3">
-                    <div class="apple-item-icon">🔊</div>
+                    <div class="apple-item-icon"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/homepod-3-select-202609-midnight?wid=400&hei=400&fmt=jpeg&qlt=90" alt="HomePod 3" onerror="this.classList.add('error')"><span class="emoji-fallback">🔊</span></div>
                     <div class="apple-item-name">HomePod 3</div>
                     <div class="apple-item-desc">午夜色</div>
                 </div>
                 <div class="apple-item reveal reveal-delay-3">
-                    <div class="apple-item-icon">📺</div>
+                    <div class="apple-item-icon"><img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/appletv-4k-select-202609?wid=400&hei=400&fmt=jpeg&qlt=90" alt="Apple TV 4K" onerror="this.classList.add('error')"><span class="emoji-fallback">📺</span></div>
                     <div class="apple-item-name">Apple TV 4K</div>
                     <div class="apple-item-desc">128GB Wi-Fi + 以太网</div>
                 </div>
