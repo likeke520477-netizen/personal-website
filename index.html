@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apple Store - 精选好物</title>
+    <title>肛门哥 — 重新定义人类</title>
     <style>
         * {
             margin: 0;
@@ -12,20 +12,12 @@
         }
 
         :root {
-            --text-primary: #1d1d1f;
-            --text-secondary: #86868b;
-            --text-tertiary: #6e6e73;
-            --bg-light: #fbfbfd;
+            --text-primary: #f5f5f7;
+            --text-secondary: #a1a1a6;
             --bg-dark: #000000;
-            --bg-gray: #f5f5f7;
-            --accent: #0071e3;
+            --bg-section: #1d1d1f;
+            --accent: #2997ff;
             --accent-hover: #0077ed;
-            --gold: #c4a25a;
-            --success: #34c759;
-            --warning: #ff9500;
-            --danger: #ff3b30;
-            --nav-height: 52px;
-            --border-radius: 12px;
         }
 
         html {
@@ -35,7 +27,7 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
             color: var(--text-primary);
-            background: var(--bg-light);
+            background: var(--bg-dark);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             overflow-x: hidden;
@@ -47,16 +39,16 @@
             top: 0;
             left: 0;
             right: 0;
-            height: var(--nav-height);
-            background: rgba(251, 251, 253, 0.92);
+            height: 48px;
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: saturate(180%) blur(20px);
             -webkit-backdrop-filter: saturate(180%) blur(20px);
             z-index: 9999;
-            border-bottom: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
         }
 
         .nav-content {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             height: 100%;
             display: flex;
@@ -66,132 +58,92 @@
         }
 
         .nav-logo {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             letter-spacing: -0.02em;
             color: var(--text-primary);
-            cursor: pointer;
         }
 
-        .nav-logo span {
-            color: var(--accent);
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
         }
 
-        .nav-search {
-            flex: 1;
-            max-width: 400px;
-            margin: 0 40px;
-            position: relative;
-        }
-
-        .nav-search input {
-            width: 100%;
-            padding: 10px 16px 10px 40px;
-            border: 1px solid rgba(0,0,0,0.1);
-            border-radius: 980px;
-            font-size: 14px;
-            background: rgba(0,0,0,0.03);
-            transition: all 0.3s;
-            outline: none;
-        }
-
-        .nav-search input:focus {
-            background: white;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(0,113,227,0.1);
-        }
-
-        .nav-search svg {
-            position: absolute;
-            left: 14px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 18px;
-            height: 18px;
+        .nav-links a {
+            font-size: 13px;
             color: var(--text-secondary);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .nav-action-btn {
-            position: relative;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--text-tertiary);
+            text-decoration: none;
             transition: color 0.3s;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 14px;
+            letter-spacing: -0.01em;
         }
 
-        .nav-action-btn:hover {
+        .nav-links a:hover {
             color: var(--text-primary);
-        }
-
-        .nav-action-btn svg {
-            width: 22px;
-            height: 22px;
-        }
-
-        .cart-badge {
-            position: absolute;
-            top: -6px;
-            right: -8px;
-            background: var(--danger);
-            color: white;
-            font-size: 11px;
-            font-weight: 600;
-            min-width: 18px;
-            height: 18px;
-            border-radius: 9px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 5px;
-        }
-
-        /* Page Container */
-        .page {
-            display: none;
-            padding-top: var(--nav-height);
-            min-height: 100vh;
-        }
-
-        .page.active {
-            display: block;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 100%);
-            padding: 80px 24px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            padding: 120px 24px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-eyebrow {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--accent);
+            letter-spacing: 0.02em;
+            margin-bottom: 16px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.2s;
         }
 
         .hero h1 {
-            font-size: clamp(40px, 6vw, 64px);
+            font-size: clamp(56px, 10vw, 96px);
             font-weight: 700;
-            letter-spacing: -0.04em;
-            line-height: 1.1;
-            margin-bottom: 16px;
+            letter-spacing: -0.05em;
+            line-height: 1;
+            margin-bottom: 24px;
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.4s;
         }
 
-        .hero p {
-            font-size: 21px;
+        .hero-subtitle {
+            font-size: clamp(24px, 4vw, 32px);
+            font-weight: 400;
             color: var(--text-secondary);
-            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+            max-width: 700px;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.6s;
         }
 
         .hero-cta {
             display: flex;
-            gap: 16px;
-            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+            animation-delay: 0.8s;
         }
 
         .btn-primary {
@@ -204,9 +156,10 @@
             font-size: 17px;
             font-weight: 400;
             text-decoration: none;
+            transition: all 0.3s;
+            letter-spacing: -0.01em;
             border: none;
             cursor: pointer;
-            transition: all 0.3s;
         }
 
         .btn-primary:hover {
@@ -224,829 +177,442 @@
             font-size: 17px;
             font-weight: 400;
             text-decoration: none;
+            transition: all 0.3s;
             border: none;
             cursor: pointer;
-            transition: all 0.3s;
+            letter-spacing: -0.01em;
         }
 
         .btn-secondary:hover {
             text-decoration: underline;
         }
 
-        /* Categories */
-        .categories {
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards, bounce 2s ease infinite;
+            animation-delay: 1.2s, 2s;
+        }
+
+        .hero-scroll-indicator svg {
+            width: 24px;
+            height: 24px;
+            color: var(--text-secondary);
+        }
+
+        /* Full Photo Section */
+        .photo-section {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-section img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .photo-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.5) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
             padding: 60px 24px;
-            background: white;
+        }
+
+        .photo-overlay h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .photo-overlay p {
+            font-size: 21px;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 600px;
+        }
+
+        /* Dark Section */
+        .dark-section {
+            padding: 120px 24px;
+            background: var(--bg-dark);
         }
 
         .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .category-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 20px;
-        }
-
-        .category-card {
-            background: var(--bg-gray);
-            border-radius: 16px;
-            padding: 24px 16px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .category-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
-        }
-
-        .category-icon {
-            font-size: 40px;
-            margin-bottom: 12px;
-        }
-
-        .category-name {
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--text-primary);
-        }
-
-        /* Featured Products */
-        .featured {
-            padding: 60px 24px;
-            background: var(--bg-gray);
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .product-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .product-image {
-            width: 100%;
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 80px;
-            position: relative;
-        }
-
-        .product-badge {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            background: var(--danger);
-            color: white;
-            font-size: 12px;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 980px;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-name {
-            font-size: 17px;
-            font-weight: 600;
-            margin-bottom: 8px;
-            letter-spacing: -0.01em;
-        }
-
-        .product-desc {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 12px;
-            line-height: 1.4;
-        }
-
-        .product-price {
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-        }
-
-        .price-current {
-            font-size: 20px;
-            font-weight: 700;
-            color: var(--text-primary);
-        }
-
-        .price-original {
-            font-size: 14px;
-            color: var(--text-secondary);
-            text-decoration: line-through;
-        }
-
-        /* Product Detail Page */
-        .product-detail {
-            padding: 40px 24px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .product-detail-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .product-gallery {
-            background: var(--bg-gray);
-            border-radius: 24px;
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 200px;
-            position: sticky;
-            top: calc(var(--nav-height) + 20px);
-        }
-
-        .product-details h1 {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 16px;
-        }
-
-        .product-rating {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-
-        .stars {
-            color: #ff9500;
-            font-size: 16px;
-        }
-
-        .rating-count {
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
-        .product-price-large {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 24px;
-        }
-
-        .product-price-large .original {
-            font-size: 20px;
-            color: var(--text-secondary);
-            text-decoration: line-through;
-            margin-left: 12px;
-            font-weight: 400;
-        }
-
-        .product-options {
-            margin-bottom: 24px;
-        }
-
-        .option-label {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--text-primary);
-        }
-
-        .option-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        .option-btn {
-            padding: 10px 20px;
-            border: 1px solid rgba(0,0,0,0.15);
-            border-radius: 980px;
-            background: white;
-            font-size: 14px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .option-btn:hover {
-            border-color: var(--accent);
-        }
-
-        .option-btn.selected {
-            border-color: var(--accent);
-            background: rgba(0,113,227,0.05);
-            color: var(--accent);
-        }
-
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            margin-bottom: 32px;
-        }
-
-        .quantity-selector label {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .quantity-controls {
-            display: flex;
-            align-items: center;
-            border: 1px solid rgba(0,0,0,0.15);
-            border-radius: 980px;
-            overflow: hidden;
-        }
-
-        .quantity-btn {
-            width: 36px;
-            height: 36px;
-            border: none;
-            background: white;
-            cursor: pointer;
-            font-size: 18px;
-            transition: background 0.3s;
-        }
-
-        .quantity-btn:hover {
-            background: var(--bg-gray);
-        }
-
-        .quantity-value {
-            width: 50px;
-            text-align: center;
-            font-size: 16px;
-            font-weight: 600;
-            border-left: 1px solid rgba(0,0,0,0.1);
-            border-right: 1px solid rgba(0,0,0,0.1);
-            padding: 8px 0;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 12px;
-            margin-bottom: 32px;
-        }
-
-        .btn-add-cart {
-            flex: 1;
-            padding: 16px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 980px;
-            font-size: 17px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-add-cart:hover {
-            background: var(--accent-hover);
-        }
-
-        .btn-buy-now {
-            flex: 1;
-            padding: 16px;
-            background: var(--text-primary);
-            color: white;
-            border: none;
-            border-radius: 980px;
-            font-size: 17px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .btn-buy-now:hover {
-            background: #333;
-        }
-
-        .product-specs {
-            border-top: 1px solid rgba(0,0,0,0.1);
-            padding-top: 24px;
-        }
-
-        .spec-item {
-            display: flex;
-            padding: 12px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .spec-label {
-            width: 100px;
-            font-size: 14px;
-            color: var(--text-secondary);
-        }
-
-        .spec-value {
-            flex: 1;
-            font-size: 14px;
-            color: var(--text-primary);
-        }
-
-        /* Cart Page */
-        .cart-page {
-            padding: 40px 24px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
-        .cart-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 32px;
-        }
-
-        .cart-header h1 {
-            font-size: 32px;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-        }
-
-        .cart-item {
-            display: grid;
-            grid-template-columns: 100px 1fr auto;
-            gap: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 16px;
-            margin-bottom: 16px;
-            align-items: center;
-        }
-
-        .cart-item-image {
-            width: 100px;
-            height: 100px;
-            background: var(--bg-gray);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-        }
-
-        .cart-item-info h3 {
-            font-size: 17px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .cart-item-info p {
-            font-size: 14px;
-            color: var(--text-secondary);
-            margin-bottom: 8px;
-        }
-
-        .cart-item-price {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .cart-item-actions {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 12px;
-        }
-
-        .cart-summary {
-            background: white;
-            border-radius: 20px;
-            padding: 32px;
-            margin-top: 32px;
-        }
-
-        .summary-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 12px 0;
+        .section-eyebrow {
             font-size: 16px;
-        }
-
-        .summary-row.total {
-            border-top: 1px solid rgba(0,0,0,0.1);
-            margin-top: 12px;
-            padding-top: 20px;
-            font-size: 20px;
-            font-weight: 700;
-        }
-
-        .checkout-btn {
-            width: 100%;
-            padding: 18px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 980px;
-            font-size: 18px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: all 0.3s;
-        }
-
-        .checkout-btn:hover {
-            background: var(--accent-hover);
-        }
-
-        .empty-cart {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        .empty-cart-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-            opacity: 0.3;
-        }
-
-        .empty-cart h2 {
-            font-size: 24px;
+            font-weight: 500;
+            color: var(--accent);
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
             margin-bottom: 12px;
         }
 
-        .empty-cart p {
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-        }
-
-        /* Login Page */
-        .login-page {
-            padding: 80px 24px;
-            max-width: 440px;
-            margin: 0 auto;
-        }
-
-        .login-container {
-            background: white;
-            border-radius: 24px;
-            padding: 48px 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-        }
-
-        .login-container h1 {
-            font-size: 28px;
+        .section-title {
+            font-size: clamp(36px, 5vw, 56px);
             font-weight: 700;
-            text-align: center;
-            margin-bottom: 32px;
-            letter-spacing: -0.02em;
-        }
-
-        .form-group {
+            letter-spacing: -0.04em;
+            line-height: 1.1;
             margin-bottom: 20px;
         }
 
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-
-        .form-group input {
-            width: 100%;
-            padding: 14px 16px;
-            border: 1px solid rgba(0,0,0,0.15);
-            border-radius: 12px;
-            font-size: 16px;
-            transition: all 0.3s;
-            outline: none;
-        }
-
-        .form-group input:focus {
-            border-color: var(--accent);
-            box-shadow: 0 0 0 4px rgba(0,113,227,0.1);
-        }
-
-        .login-btn {
-            width: 100%;
-            padding: 16px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 980px;
-            font-size: 17px;
-            font-weight: 600;
-            cursor: pointer;
-            margin-top: 8px;
-            transition: all 0.3s;
-        }
-
-        .login-btn:hover {
-            background: var(--accent-hover);
-        }
-
-        .login-divider {
-            text-align: center;
-            margin: 24px 0;
-            position: relative;
+        .section-subtitle {
+            font-size: 21px;
+            font-weight: 400;
             color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        .login-divider::before,
-        .login-divider::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 40%;
-            height: 1px;
-            background: rgba(0,0,0,0.1);
-        }
-
-        .login-divider::before { left: 0; }
-        .login-divider::after { right: 0; }
-
-        .social-login {
-            display: flex;
-            gap: 12px;
-        }
-
-        .social-btn {
-            flex: 1;
-            padding: 12px;
-            border: 1px solid rgba(0,0,0,0.15);
-            border-radius: 12px;
-            background: white;
-            cursor: pointer;
-            font-size: 14px;
-            transition: all 0.3s;
-        }
-
-        .social-btn:hover {
-            background: var(--bg-gray);
-        }
-
-        /* Checkout Page */
-        .checkout-page {
-            padding: 40px 24px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .checkout-page h1 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 32px;
-            letter-spacing: -0.03em;
-        }
-
-        .checkout-section {
-            background: white;
-            border-radius: 20px;
-            padding: 32px;
-            margin-bottom: 24px;
-        }
-
-        .checkout-section h2 {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 20px;
+            line-height: 1.5;
+            max-width: 680px;
             letter-spacing: -0.01em;
         }
 
-        .address-card {
-            border: 2px solid rgba(0,0,0,0.1);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 12px;
-            cursor: pointer;
-            transition: all 0.3s;
+        /* Specs Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            margin-top: 60px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            overflow: hidden;
         }
 
-        .address-card:hover {
-            border-color: var(--accent);
+        .spec-card {
+            background: var(--bg-dark);
+            padding: 40px 32px;
         }
 
-        .address-card.selected {
-            border-color: var(--accent);
-            background: rgba(0,113,227,0.03);
-        }
-
-        .address-card h4 {
-            font-size: 16px;
-            margin-bottom: 4px;
-        }
-
-        .address-card p {
+        .spec-label {
             font-size: 14px;
             color: var(--text-secondary);
-        }
-
-        .payment-options {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
-        }
-
-        .payment-option {
-            border: 2px solid rgba(0,0,0,0.1);
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .payment-option:hover {
-            border-color: var(--accent);
-        }
-
-        .payment-option.selected {
-            border-color: var(--accent);
-            background: rgba(0,113,227,0.03);
-        }
-
-        .payment-option-icon {
-            font-size: 32px;
             margin-bottom: 8px;
-        }
-
-        .payment-option-name {
-            font-size: 14px;
             font-weight: 500;
         }
 
-        /* Order Success */
-        .order-success {
-            text-align: center;
-            padding: 80px 24px;
+        .spec-value {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 8px;
         }
 
-        .success-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--success);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 24px;
+        .spec-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Features */
+        .features {
+            padding: 120px 24px;
+            background: var(--bg-section);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .feature-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px;
+            padding: 40px 32px;
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: rgba(255,255,255,0.12);
+            transform: translateY(-4px);
+        }
+
+        .feature-icon {
             font-size: 40px;
-            color: white;
+            margin-bottom: 20px;
         }
 
-        .order-success h1 {
-            font-size: 32px;
+        .feature-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
             margin-bottom: 12px;
         }
 
-        .order-success p {
+        .feature-card p {
+            font-size: 15px;
+            line-height: 1.6;
             color: var(--text-secondary);
-            margin-bottom: 32px;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            padding: 120px 24px;
+            background: var(--bg-dark);
+            text-align: center;
+        }
+
+        .quote-text {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            line-height: 1.3;
+            max-width: 800px;
+            margin: 0 auto 32px;
+            background: linear-gradient(180deg, #ffffff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .quote-author {
+            font-size: 17px;
+            color: var(--text-secondary);
+        }
+
+        /* Timeline */
+        .timeline-section {
+            padding: 120px 24px;
+            background: var(--bg-section);
+        }
+
+        .timeline {
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: rgba(255,255,255,0.1);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-year {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 0.02em;
+            text-align: right;
+            padding-top: 2px;
+        }
+
+        .timeline-content h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .timeline-content p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-secondary);
+        }
+
+        /* Apple Products Section */
+        .apple-section {
+            padding: 120px 24px;
+            background: var(--bg-dark);
+            text-align: center;
+        }
+
+        .apple-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-top: 60px;
+        }
+
+        .apple-item {
+            background: rgba(255,255,255,0.04);
+            border-radius: 20px;
+            padding: 32px 20px;
+            transition: all 0.3s;
+        }
+
+        .apple-item:hover {
+            background: rgba(255,255,255,0.08);
+            transform: scale(1.05);
+        }
+
+        .apple-item-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .apple-item-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .apple-item-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        /* Contact */
+        .contact-section {
+            padding: 120px 24px;
+            background: var(--bg-section);
+            text-align: center;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 500px;
+            margin: 40px auto 0;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 20px 32px;
+            background: rgba(255,255,255,0.06);
+            border-radius: 16px;
+            text-decoration: none;
+            color: var(--text-primary);
+            font-size: 17px;
+            font-weight: 500;
+            transition: all 0.3s;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .contact-link:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
         }
 
         /* Footer */
         footer {
-            background: var(--bg-gray);
+            background: var(--bg-dark);
             padding: 40px 24px;
-            border-top: 1px solid rgba(0,0,0,0.06);
-            margin-top: 60px;
+            border-top: 1px solid rgba(255,255,255,0.06);
         }
 
         .footer-content {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .footer-column h4 {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column li {
-            margin-bottom: 8px;
-        }
-
-        .footer-column a {
+        .footer-text {
             font-size: 13px;
             color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-column a:hover {
-            color: var(--text-primary);
-        }
-
-        .footer-bottom {
-            max-width: 1200px;
-            margin: 32px auto 0;
-            padding-top: 24px;
-            border-top: 1px solid rgba(0,0,0,0.06);
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-secondary);
-        }
-
-        /* Toast Notification */
-        .toast {
-            position: fixed;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: var(--text-primary);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 980px;
-            font-size: 15px;
-            font-weight: 500;
-            opacity: 0;
-            transition: all 0.3s;
-            z-index: 10000;
-            pointer-events: none;
-        }
-
-        .toast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-search {
-                display: none;
-            }
-
-            .product-detail-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .product-gallery {
-                position: static;
-            }
-
-            .cart-item {
-                grid-template-columns: 80px 1fr;
-                gap: 16px;
-            }
-
-            .cart-item-actions {
-                grid-column: 1 / -1;
-                flex-direction: row;
-                justify-content: space-between;
-            }
-
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .payment-options {
-                grid-template-columns: 1fr;
-            }
         }
 
         /* Animations */
-        .fade-in {
-            animation: fadeIn 0.3s ease;
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .apple-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline::before { left: 20px; }
+            .timeline-item {
+                grid-template-columns: 1fr;
+                gap: 8px;
+                padding-left: 50px;
+            }
+            .timeline-item::before { left: 20px; }
+            .timeline-year { text-align: left; }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 16px;
+            }
+        }
+
+        section[id] {
+            scroll-margin-top: 48px;
         }
     </style>
 </head>
@@ -1054,617 +620,269 @@
     <!-- Navigation -->
     <nav>
         <div class="nav-content">
-            <div class="nav-logo" onclick="showPage('home')">Apple<span>Store</span></div>
-            <div class="nav-search">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="11" cy="11" r="8"/>
-                    <path d="M21 21l-4.35-4.35"/>
-                </svg>
-                <input type="text" placeholder="搜索商品..." id="searchInput" onkeyup="handleSearch(event)">
-            </div>
-            <div class="nav-actions">
-                <button class="nav-action-btn" onclick="showPage('login')">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
-                        <circle cx="12" cy="7" r="4"/>
-                    </svg>
-                    <span>登录</span>
-                </button>
-                <button class="nav-action-btn" onclick="showPage('cart')">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="9" cy="21" r="1"/>
-                        <circle cx="20" cy="21" r="1"/>
-                        <path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/>
-                    </svg>
-                    <span>购物车</span>
-                    <span class="cart-badge" id="cartBadge" style="display: none;">0</span>
-                </button>
-            </div>
+            <div class="nav-logo">肛门哥</div>
+            <ul class="nav-links">
+                <li><a href="#overview">概览</a></li>
+                <li><a href="#specs">参数</a></li>
+                <li><a href="#features">特性</a></li>
+                <li><a href="#apple">Apple 生态</a></li>
+                <li><a href="#timeline">履历</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- Home Page -->
-    <div class="page active" id="page-home">
-        <!-- Hero -->
-        <section class="hero">
-            <h1>精选好物，品质生活。</h1>
-            <p>发现全球优质商品，享受极致购物体验。</p>
-            <div class="hero-cta">
-                <button class="btn-primary" onclick="scrollToProducts()">立即选购</button>
-                <button class="btn-secondary" onclick="showPage('login')">登录享优惠 ›</button>
-            </div>
-        </section>
+    <!-- Hero -->
+    <section class="hero" id="overview">
+        <div class="hero-eyebrow">全新发布</div>
+        <h1>肛门哥</h1>
+        <p class="hero-subtitle">强大。优雅。果粉中的果粉。<br>库克看了都点头的存在。</p>
+        <div class="hero-cta">
+            <a href="#specs" class="btn-primary">查看参数</a>
+            <a href="#features" class="btn-secondary">了解更多 ›</a>
+        </div>
+        <div class="hero-scroll-indicator">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 13l5 5 5-5M7 6l5 5 5-5"/>
+            </svg>
+        </div>
+    </section>
 
-        <!-- Categories -->
-        <section class="categories">
-            <div class="section-container">
-                <h2 class="section-title">商品分类</h2>
-                <div class="category-grid">
-                    <div class="category-card" onclick="filterByCategory('数码')">
-                        <div class="category-icon">📱</div>
-                        <div class="category-name">数码</div>
-                    </div>
-                    <div class="category-card" onclick="filterByCategory('电脑')">
-                        <div class="category-icon">💻</div>
-                        <div class="category-name">电脑</div>
-                    </div>
-                    <div class="category-card" onclick="filterByCategory('家居')">
-                        <div class="category-icon">🏠</div>
-                        <div class="category-name">家居</div>
-                    </div>
-                    <div class="category-card" onclick="filterByCategory('服饰')">
-                        <div class="category-icon">👕</div>
-                        <div class="category-name">服饰</div>
-                    </div>
-                    <div class="category-card" onclick="filterByCategory('美妆')">
-                        <div class="category-icon">💄</div>
-                        <div class="category-name">美妆</div>
-                    </div>
-                    <div class="category-card" onclick="filterByCategory('食品')">
-                        <div class="category-icon">🍎</div>
-                        <div class="category-name">食品</div>
-                    </div>
-                    <div class="category-card" onclick="filterByCategory('运动')">
-                        <div class="category-icon">⚽</div>
-                        <div class="category-name">运动</div>
-                    </div>
-                    <div class="category-card" onclick="filterByCategory('图书')">
-                        <div class="category-icon">📚</div>
-                        <div class="category-name">图书</div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Photo 1 -->
+    <section class="photo-section">
+        <img src="photo1.jpg" alt="肛门哥">
+        <div class="photo-overlay">
+            <h2>设计，经得起凝视。</h2>
+            <p>每一处细节，都经过精心打磨。</p>
+        </div>
+    </section>
 
-        <!-- Featured Products -->
-        <section class="featured" id="featured-products">
-            <div class="section-container">
-                <h2 class="section-title">热门推荐</h2>
-                <div class="product-grid" id="productGrid">
-                    <!-- Products will be rendered here -->
+    <!-- Specs -->
+    <section class="dark-section" id="specs">
+        <div class="section-container">
+            <div class="section-eyebrow reveal">技术规格</div>
+            <h2 class="section-title reveal reveal-delay-1">每一项参数，<br>都是旗舰级。</h2>
+            <div class="specs-grid">
+                <div class="spec-card reveal reveal-delay-1">
+                    <div class="spec-label">型号名称</div>
+                    <div class="spec-value">肛门哥 Pro Max</div>
+                    <div class="spec-desc">人类 2.0 架构，搭载 Apple 信仰芯片</div>
+                </div>
+                <div class="spec-card reveal reveal-delay-2">
+                    <div class="spec-label">核心信仰</div>
+                    <div class="spec-value">Tim Cook</div>
+                    <div class="spec-desc">库克死忠粉，WWDC 从不缺席，Keynote 逐帧观看</div>
+                </div>
+                <div class="spec-card reveal reveal-delay-1">
+                    <div class="spec-label">设备持有量</div>
+                    <div class="spec-value">全家桶</div>
+                    <div class="spec-desc">iPhone · iPad · Mac · Apple Watch · AirPods · HomePod · Apple TV</div>
+                </div>
+                <div class="spec-card reveal reveal-delay-2">
+                    <div class="spec-label">系统版本</div>
+                    <div class="spec-value">iOS 20 Beta 1</div>
+                    <div class="spec-desc">开发者账号持有者，第一时间体验最新系统</div>
+                </div>
+                <div class="spec-card reveal reveal-delay-1">
+                    <div class="spec-label">续航能力</div>
+                    <div class="spec-value">∞ 小时</div>
+                    <div class="spec-desc">靠对 Apple 的热爱驱动，永不关机</div>
+                </div>
+                <div class="spec-card reveal reveal-delay-2">
+                    <div class="spec-label">生态系统</div>
+                    <div class="spec-value">100% Apple</div>
+                    <div class="spec-desc">安卓？不存在的。Windows？没听过。</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h4>购物指南</h4>
-                    <ul>
-                        <li><a href="#">购物流程</a></li>
-                        <li><a href="#">会员介绍</a></li>
-                        <li><a href="#">常见问题</a></li>
-                        <li><a href="#">联系客服</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>配送方式</h4>
-                    <ul>
-                        <li><a href="#">上门自提</a></li>
-                        <li><a href="#">快递运输</a></li>
-                        <li><a href="#">特快专递</a></li>
-                        <li><a href="#">配送服务查询</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>支付方式</h4>
-                    <ul>
-                        <li><a href="#">在线支付</a></li>
-                        <li><a href="#">货到付款</a></li>
-                        <li><a href="#">分期付款</a></li>
-                        <li><a href="#">公司转账</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>售后服务</h4>
-                    <ul>
-                        <li><a href="#">售后政策</a></li>
-                        <li><a href="#">价格保护</a></li>
-                        <li><a href="#">退款说明</a></li>
-                        <li><a href="#">取消订单</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                © 2026 Apple Store. 保留所有权利。
-            </div>
-        </footer>
-    </div>
+    <!-- Photo 2 -->
+    <section class="photo-section">
+        <img src="photo2.jpg" alt="肛门哥">
+        <div class="photo-overlay">
+            <h2>姿态，从容不迫。</h2>
+            <p>就像库克站在舞台上那样。</p>
+        </div>
+    </section>
 
-    <!-- Product Detail Page -->
-    <div class="page" id="page-product">
-        <div class="product-detail">
-            <div class="product-detail-grid">
-                <div class="product-gallery" id="productGallery">
-                    📱
+    <!-- Features -->
+    <section class="features" id="features">
+        <div class="section-container">
+            <div class="section-eyebrow reveal">核心特性</div>
+            <h2 class="section-title reveal reveal-delay-1">为什么是肛门哥。</h2>
+            <p class="section-subtitle reveal reveal-delay-2">三大核心能力，重新定义果粉标准。</p>
+            <div class="features-grid">
+                <div class="feature-card reveal reveal-delay-1">
+                    <div class="feature-icon">🍎</div>
+                    <h3>极致果粉</h3>
+                    <p>从 iPhone 4 到 iPhone 16 Pro Max，每一代首发日准时排队。Apple Store 开业当天第一个到店。库克的每一句 "Good morning" 都能让他热泪盈眶。</p>
                 </div>
-                <div class="product-details">
-                    <h1 id="productName">iPhone 15 Pro</h1>
-                    <div class="product-rating">
-                        <span class="stars">★★★★★</span>
-                        <span class="rating-count">4.9 (2,847 评价)</span>
+                <div class="feature-card reveal reveal-delay-2">
+                    <div class="feature-icon">⚡</div>
+                    <h3>生态闭环</h3>
+                    <p>AirDrop 传文件、Handoff 续任务、Universal Clipboard 复制粘贴。他的生活就是 Apple 生态的最佳演示，流畅得让人嫉妒。</p>
+                </div>
+                <div class="feature-card reveal reveal-delay-3">
+                    <div class="feature-icon">🎯</div>
+                    <h3>品味在线</h3>
+                    <p>只选银色和原色钛金属。手机壳必须是 Apple 官方的。充电线只认准 USB-C。对设计的追求，已经刻进了 DNA。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote -->
+    <section class="quote-section">
+        <div class="section-container">
+            <div class="quote-text reveal">"Think Different. 但我只 Think Apple。"</div>
+            <div class="quote-author reveal reveal-delay-1">— 肛门哥</div>
+        </div>
+    </section>
+
+    <!-- Apple Products -->
+    <section class="apple-section" id="apple">
+        <div class="section-container">
+            <div class="section-eyebrow reveal">设备矩阵</div>
+            <h2 class="section-title reveal reveal-delay-1">他的 Apple 全家桶。</h2>
+            <p class="section-subtitle reveal reveal-delay-2" style="margin: 0 auto;">每一件，都是真爱。</p>
+            <div class="apple-grid">
+                <div class="apple-item reveal reveal-delay-1">
+                    <div class="apple-item-icon">📱</div>
+                    <div class="apple-item-name">iPhone 16 Pro Max</div>
+                    <div class="apple-item-desc">1TB 原色钛金属</div>
+                </div>
+                <div class="apple-item reveal reveal-delay-1">
+                    <div class="apple-item-icon">💻</div>
+                    <div class="apple-item-name">MacBook Pro M4</div>
+                    <div class="apple-item-desc">16 英寸 太空黑</div>
+                </div>
+                <div class="apple-item reveal reveal-delay-2">
+                    <div class="apple-item-icon">⌚</div>
+                    <div class="apple-item-name">Apple Watch Ultra 2</div>
+                    <div class="apple-item-desc">钛金属 + 橙色 Alpine</div>
+                </div>
+                <div class="apple-item reveal reveal-delay-2">
+                    <div class="apple-item-icon">🎧</div>
+                    <div class="apple-item-name">AirPods Pro 2</div>
+                    <div class="apple-item-desc">USB-C 版</div>
+                </div>
+                <div class="apple-item reveal reveal-delay-3">
+                    <div class="apple-item-icon">📟</div>
+                    <div class="apple-item-name">iPad Pro M4</div>
+                    <div class="apple-item-desc">13 英寸 256GB</div>
+                </div>
+                <div class="apple-item reveal reveal-delay-3">
+                    <div class="apple-item-icon">🖥️</div>
+                    <div class="apple-item-name">Apple Vision Pro</div>
+                    <div class="apple-item-desc">256GB 首发购入</div>
+                </div>
+                <div class="apple-item reveal reveal-delay-3">
+                    <div class="apple-item-icon">🔊</div>
+                    <div class="apple-item-name">HomePod 2</div>
+                    <div class="apple-item-desc">午夜色</div>
+                </div>
+                <div class="apple-item reveal reveal-delay-3">
+                    <div class="apple-item-icon">📺</div>
+                    <div class="apple-item-name">Apple TV 4K</div>
+                    <div class="apple-item-desc">128GB Wi-Fi + 以太网</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="timeline-section" id="timeline">
+        <div class="section-container">
+            <div class="section-eyebrow reveal">成长历程</div>
+            <h2 class="section-title reveal reveal-delay-1">与 Apple 的这些年。</h2>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2010</div>
+                    <div class="timeline-content">
+                        <h4>初遇 iPhone 4</h4>
+                        <p>第一次见到 Retina 显示屏，从此再也回不去了。乔布斯说 "one more thing" 的时候，他哭了。</p>
                     </div>
-                    <div class="product-price-large">
-                        <span id="productPrice">¥7,999</span>
-                        <span class="original" id="productOriginalPrice">¥8,999</span>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2015</div>
+                    <div class="timeline-content">
+                        <h4>购入第一台 MacBook</h4>
+                        <p>12 英寸 MacBook，薄到不可思议。为了它吃了三个月泡面，但从未后悔。</p>
                     </div>
-                    <div class="product-options">
-                        <div class="option-label">颜色</div>
-                        <div class="option-buttons">
-                            <button class="option-btn selected">原色钛金属</button>
-                            <button class="option-btn">蓝色钛金属</button>
-                            <button class="option-btn">白色钛金属</button>
-                            <button class="option-btn">黑色钛金属</button>
-                        </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h4>M1 芯片发布</h4>
+                        <p>WWDC 2020 直播看到 M1 性能数据时，从椅子上跳了起来。当天预定了 MacBook Air M1。</p>
                     </div>
-                    <div class="product-options">
-                        <div class="option-label">存储容量</div>
-                        <div class="option-buttons">
-                            <button class="option-btn">128GB</button>
-                            <button class="option-btn selected">256GB</button>
-                            <button class="option-btn">512GB</button>
-                            <button class="option-btn">1TB</button>
-                        </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">2024</div>
+                    <div class="timeline-content">
+                        <h4>Vision Pro 首发</h4>
+                        <p>凌晨三点排队，成为全国前 100 位 Vision Pro 用户。库克在店里跟他握了手。</p>
                     </div>
-                    <div class="quantity-selector">
-                        <label>数量</label>
-                        <div class="quantity-controls">
-                            <button class="quantity-btn" onclick="changeQuantity(-1)">−</button>
-                            <div class="quantity-value" id="quantityValue">1</div>
-                            <button class="quantity-btn" onclick="changeQuantity(1)">+</button>
-                        </div>
-                    </div>
-                    <div class="action-buttons">
-                        <button class="btn-add-cart" onclick="addToCart()">加入购物车</button>
-                        <button class="btn-buy-now" onclick="buyNow()">立即购买</button>
-                    </div>
-                    <div class="product-specs">
-                        <div class="spec-item">
-                            <div class="spec-label">品牌</div>
-                            <div class="spec-value">Apple</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">型号</div>
-                            <div class="spec-value">iPhone 15 Pro</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">屏幕</div>
-                            <div class="spec-value">6.1 英寸超视网膜 XDR 显示屏</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">芯片</div>
-                            <div class="spec-value">A17 Pro 芯片</div>
-                        </div>
-                        <div class="spec-item">
-                            <div class="spec-label">发货</div>
-                            <div class="spec-value">现货，预计 1-3 个工作日送达</div>
-                        </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-year">至今</div>
+                    <div class="timeline-content">
+                        <h4>Apple 信仰满级</h4>
+                        <p>全家桶集齐，Apple One 订阅，开发者账号在握。每天醒来第一件事：检查 Apple 新闻。</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Cart Page -->
-    <div class="page" id="page-cart">
-        <div class="cart-page">
-            <div class="cart-header">
-                <h1>购物车</h1>
-                <button class="btn-secondary" onclick="clearCart()">清空购物车</button>
-            </div>
-            <div id="cartContent">
-                <!-- Cart items will be rendered here -->
+    <!-- Contact -->
+    <section class="contact-section" id="contact">
+        <div class="section-container">
+            <div class="section-eyebrow reveal">联系</div>
+            <h2 class="section-title reveal reveal-delay-1">和肛门哥聊聊 Apple。</h2>
+            <p class="section-subtitle reveal reveal-delay-2" style="margin: 0 auto;">只要聊的是 Apple，他随时有空。</p>
+            <div class="contact-links reveal reveal-delay-3">
+                <a href="#" class="contact-link">
+                    <span>📱</span>
+                    iPhone（只接 FaceTime）
+                </a>
+                <a href="#" class="contact-link">
+                    <span>✉️</span>
+                    gangmen@apple.fan
+                </a>
+                <a href="#" class="contact-link">
+                    <span>🍎</span>
+                    Apple 社区 ID: gangmen_pro
+                </a>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Login Page -->
-    <div class="page" id="page-login">
-        <div class="login-page">
-            <div class="login-container">
-                <h1>欢迎回来</h1>
-                <form onsubmit="handleLogin(event)">
-                    <div class="form-group">
-                        <label>邮箱或手机号</label>
-                        <input type="text" placeholder="请输入邮箱或手机号" required>
-                    </div>
-                    <div class="form-group">
-                        <label>密码</label>
-                        <input type="password" placeholder="请输入密码" required>
-                    </div>
-                    <button type="submit" class="login-btn">登录</button>
-                </form>
-                <div class="login-divider">或</div>
-                <div class="social-login">
-                    <button class="social-btn">微信登录</button>
-                    <button class="social-btn">支付宝登录</button>
-                </div>
-                <p style="text-align: center; margin-top: 24px; font-size: 14px; color: var(--text-secondary);">
-                    还没有账号？<a href="#" style="color: var(--accent); text-decoration: none;">立即注册</a>
-                </p>
-            </div>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">© 2026 肛门哥。Designed by Apple in California.</div>
+            <div class="footer-text">Think Different.</div>
         </div>
-    </div>
-
-    <!-- Checkout Page -->
-    <div class="page" id="page-checkout">
-        <div class="checkout-page">
-            <h1>确认订单</h1>
-            <div class="checkout-section">
-                <h2>收货地址</h2>
-                <div class="address-card selected">
-                    <h4>张三</h4>
-                    <p>138****8888</p>
-                    <p>北京市朝阳区建国路 88 号 SOHO 现代城 A 座 1201 室</p>
-                </div>
-                <div class="address-card">
-                    <h4>李四</h4>
-                    <p>139****9999</p>
-                    <p>上海市浦东新区陆家嘴环路 1000 号恒生银行大厦 15 楼</p>
-                </div>
-                <button class="btn-secondary" style="margin-top: 12px;">+ 添加新地址</button>
-            </div>
-            <div class="checkout-section">
-                <h2>支付方式</h2>
-                <div class="payment-options">
-                    <div class="payment-option selected">
-                        <div class="payment-option-icon">💳</div>
-                        <div class="payment-option-name">支付宝</div>
-                    </div>
-                    <div class="payment-option">
-                        <div class="payment-option-icon">💚</div>
-                        <div class="payment-option-name">微信支付</div>
-                    </div>
-                    <div class="payment-option">
-                        <div class="payment-option-icon">🏦</div>
-                        <div class="payment-option-name">银行卡</div>
-                    </div>
-                </div>
-            </div>
-            <div class="checkout-section">
-                <h2>订单摘要</h2>
-                <div id="checkoutSummary">
-                    <!-- Summary will be rendered here -->
-                </div>
-            </div>
-            <button class="checkout-btn" onclick="placeOrder()">提交订单</button>
-        </div>
-    </div>
-
-    <!-- Order Success Page -->
-    <div class="page" id="page-success">
-        <div class="order-success">
-            <div class="success-icon">✓</div>
-            <h1>订单提交成功！</h1>
-            <p>感谢您的购买，我们将尽快为您发货。</p>
-            <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 32px;">
-                订单号：#20261101123456
-            </p>
-            <button class="btn-primary" onclick="showPage('home')">继续购物</button>
-        </div>
-    </div>
-
-    <!-- Toast -->
-    <div class="toast" id="toast"></div>
+    </footer>
 
     <script>
-        // Product Data
-        const products = [
-            { id: 1, name: 'iPhone 15 Pro', desc: '钛金属设计，A17 Pro 芯片', price: 7999, originalPrice: 8999, emoji: '📱', category: '数码', badge: '热卖' },
-            { id: 2, name: 'MacBook Air M3', desc: '轻薄强大，续航长达 18 小时', price: 8999, originalPrice: 9999, emoji: '💻', category: '电脑' },
-            { id: 3, name: 'AirPods Pro 2', desc: '自适应音频，个性化空间音频', price: 1899, originalPrice: 1999, emoji: '🎧', category: '数码', badge: '新品' },
-            { id: 4, name: 'Apple Watch Ultra 2', desc: '为探险而生，钛金属表壳', price: 6499, originalPrice: 6999, emoji: '⌚', category: '数码' },
-            { id: 5, name: 'iPad Pro M4', desc: '超薄设计，M4 芯片强劲性能', price: 8999, originalPrice: 9499, emoji: '📟', category: '电脑' },
-            { id: 6, name: 'HomePod mini', desc: '小巧身材，震撼音效', price: 749, originalPrice: 799, emoji: '🔊', category: '家居' },
-            { id: 7, name: 'Nike 运动鞋', desc: 'Air Max 系列，舒适透气', price: 899, originalPrice: 1299, emoji: '👟', category: '运动', badge: '特惠' },
-            { id: 8, name: '戴森吹风机', desc: '智能温控，快速干发', price: 2990, originalPrice: 3490, emoji: '💨', category: '家居' },
-            { id: 9, name: 'SK-II 神仙水', desc: '护肤精华露，改善肤质', price: 1540, originalPrice: 1890, emoji: '✨', category: '美妆' },
-            { id: 10, name: '索尼 WH-1000XM5', desc: '行业领先降噪，30 小时续航', price: 2499, originalPrice: 2999, emoji: '🎧', category: '数码' },
-            { id: 11, name: 'Kindle Paperwhite', desc: '6.8 英寸屏幕，防水设计', price: 1068, originalPrice: 1298, emoji: '📖', category: '图书' },
-            { id: 12, name: '乐高积木套装', desc: '创意拼搭，适合全家', price: 599, originalPrice: 799, emoji: '🧱', category: '家居' }
-        ];
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -60px 0px'
+        };
 
-        let cart = [];
-        let currentProduct = null;
-        let currentQuantity = 1;
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', () => {
-            renderProducts(products);
-            updateCartBadge();
-        });
-
-        // Render Products
-        function renderProducts(productsToRender) {
-            const grid = document.getElementById('productGrid');
-            grid.innerHTML = productsToRender.map(product => `
-                <div class="product-card" onclick="showProductDetail(${product.id})">
-                    <div class="product-image">
-                        ${product.emoji}
-                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
-                    </div>
-                    <div class="product-info">
-                        <div class="product-name">${product.name}</div>
-                        <div class="product-desc">${product.desc}</div>
-                        <div class="product-price">
-                            <span class="price-current">¥${product.price.toLocaleString()}</span>
-                            ${product.originalPrice ? `<span class="price-original">¥${product.originalPrice.toLocaleString()}</span>` : ''}
-                        </div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // Show Product Detail
-        function showProductDetail(productId) {
-            currentProduct = products.find(p => p.id === productId);
-            if (!currentProduct) return;
-
-            document.getElementById('productName').textContent = currentProduct.name;
-            document.getElementById('productPrice').textContent = `¥${currentProduct.price.toLocaleString()}`;
-            document.getElementById('productOriginalPrice').textContent = currentProduct.originalPrice ? `¥${currentProduct.originalPrice.toLocaleString()}` : '';
-            document.getElementById('productGallery').textContent = currentProduct.emoji;
-            currentQuantity = 1;
-            document.getElementById('quantityValue').textContent = currentQuantity;
-
-            showPage('product');
-        }
-
-        // Change Quantity
-        function changeQuantity(delta) {
-            currentQuantity = Math.max(1, currentQuantity + delta);
-            document.getElementById('quantityValue').textContent = currentQuantity;
-        }
-
-        // Add to Cart
-        function addToCart() {
-            if (!currentProduct) return;
-
-            const existingItem = cart.find(item => item.id === currentProduct.id);
-            if (existingItem) {
-                existingItem.quantity += currentQuantity;
-            } else {
-                cart.push({ ...currentProduct, quantity: currentQuantity });
-            }
-
-            updateCartBadge();
-            showToast('已添加到购物车');
-        }
-
-        // Buy Now
-        function buyNow() {
-            addToCart();
-            showPage('checkout');
-            renderCheckoutSummary();
-        }
-
-        // Show Page
-        function showPage(pageName) {
-            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
-            document.getElementById(`page-${pageName}`).classList.add('active');
-            window.scrollTo(0, 0);
-
-            if (pageName === 'cart') {
-                renderCart();
-            }
-        }
-
-        // Render Cart
-        function renderCart() {
-            const cartContent = document.getElementById('cartContent');
-
-            if (cart.length === 0) {
-                cartContent.innerHTML = `
-                    <div class="empty-cart">
-                        <div class="empty-cart-icon">🛒</div>
-                        <h2>购物车是空的</h2>
-                        <p>快去挑选心仪的商品吧</p>
-                        <button class="btn-primary" onclick="showPage('home')">去购物</button>
-                    </div>
-                `;
-                return;
-            }
-
-            let total = 0;
-            cartContent.innerHTML = `
-                ${cart.map(item => {
-                    total += item.price * item.quantity;
-                    return `
-                        <div class="cart-item">
-                            <div class="cart-item-image">${item.emoji}</div>
-                            <div class="cart-item-info">
-                                <h3>${item.name}</h3>
-                                <p>${item.desc}</p>
-                                <div class="cart-item-price">¥${item.price.toLocaleString()}</div>
-                            </div>
-                            <div class="cart-item-actions">
-                                <div class="quantity-controls">
-                                    <button class="quantity-btn" onclick="updateCartQuantity(${item.id}, -1)">−</button>
-                                    <div class="quantity-value">${item.quantity}</div>
-                                    <button class="quantity-btn" onclick="updateCartQuantity(${item.id}, 1)">+</button>
-                                </div>
-                                <button class="btn-secondary" onclick="removeFromCart(${item.id})" style="font-size: 14px;">删除</button>
-                            </div>
-                        </div>
-                    `;
-                }).join('')}
-                <div class="cart-summary">
-                    <div class="summary-row">
-                        <span>商品总计</span>
-                        <span>¥${total.toLocaleString()}</span>
-                    </div>
-                    <div class="summary-row">
-                        <span>运费</span>
-                        <span>免运费</span>
-                    </div>
-                    <div class="summary-row total">
-                        <span>应付总额</span>
-                        <span>¥${total.toLocaleString()}</span>
-                    </div>
-                    <button class="checkout-btn" onclick="showPage('checkout'); renderCheckoutSummary();">去结算</button>
-                </div>
-            `;
-        }
-
-        // Update Cart Quantity
-        function updateCartQuantity(productId, delta) {
-            const item = cart.find(i => i.id === productId);
-            if (item) {
-                item.quantity = Math.max(1, item.quantity + delta);
-                renderCart();
-                updateCartBadge();
-            }
-        }
-
-        // Remove from Cart
-        function removeFromCart(productId) {
-            cart = cart.filter(item => item.id !== productId);
-            renderCart();
-            updateCartBadge();
-            showToast('已从购物车移除');
-        }
-
-        // Clear Cart
-        function clearCart() {
-            if (cart.length === 0) return;
-            if (confirm('确定要清空购物车吗？')) {
-                cart = [];
-                renderCart();
-                updateCartBadge();
-                showToast('购物车已清空');
-            }
-        }
-
-        // Update Cart Badge
-        function updateCartBadge() {
-            const badge = document.getElementById('cartBadge');
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-
-            if (totalItems > 0) {
-                badge.textContent = totalItems;
-                badge.style.display = 'flex';
-            } else {
-                badge.style.display = 'none';
-            }
-        }
-
-        // Render Checkout Summary
-        function renderCheckoutSummary() {
-            const summary = document.getElementById('checkoutSummary');
-            let total = 0;
-
-            summary.innerHTML = `
-                ${cart.map(item => {
-                    total += item.price * item.quantity;
-                    return `
-                        <div class="summary-row">
-                            <span>${item.name} × ${item.quantity}</span>
-                            <span>¥${(item.price * item.quantity).toLocaleString()}</span>
-                        </div>
-                    `;
-                }).join('')}
-                <div class="summary-row">
-                    <span>运费</span>
-                    <span>免运费</span>
-                </div>
-                <div class="summary-row total">
-                    <span>应付总额</span>
-                    <span>¥${total.toLocaleString()}</span>
-                </div>
-            `;
-        }
-
-        // Place Order
-        function placeOrder() {
-            if (cart.length === 0) {
-                showToast('购物车是空的');
-                return;
-            }
-
-            cart = [];
-            updateCartBadge();
-            showPage('success');
-        }
-
-        // Handle Login
-        function handleLogin(event) {
-            event.preventDefault();
-            showToast('登录成功');
-            setTimeout(() => showPage('home'), 1000);
-        }
-
-        // Filter by Category
-        function filterByCategory(category) {
-            const filtered = products.filter(p => p.category === category);
-            renderProducts(filtered);
-            scrollToProducts();
-        }
-
-        // Handle Search
-        function handleSearch(event) {
-            if (event.key === 'Enter') {
-                const query = event.target.value.toLowerCase();
-                const filtered = products.filter(p =>
-                    p.name.toLowerCase().includes(query) ||
-                    p.desc.toLowerCase().includes(query)
-                );
-                renderProducts(filtered);
-                scrollToProducts();
-            }
-        }
-
-        // Scroll to Products
-        function scrollToProducts() {
-            document.getElementById('featured-products').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        // Show Toast
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2000);
-        }
-
-        // Option Button Selection
-        document.addEventListener('click', (e) => {
-            if (e.target.classList.contains('option-btn')) {
-                const parent = e.target.parentElement;
-                parent.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
-                e.target.classList.add('selected');
-            }
-
-            if (e.target.classList.contains('address-card')) {
-                document.querySelectorAll('.address-card').forEach(card => card.classList.remove('selected'));
-                e.target.classList.add('selected');
-            }
-
-            if (e.target.classList.contains('payment-option')) {
-                document.querySelectorAll('.payment-option').forEach(option => option.classList.remove('selected'));
-                e.target.classList.add('selected');
-            }
-        });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
